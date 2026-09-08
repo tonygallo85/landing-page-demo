@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page Demo</title>
+  <title>You're Invited — Birthday Drinks 🎉</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,19 +12,61 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <span class="logo">🏳️‍🌈 Demo</span>
-      <a class="nav-link" href="#features">Learn more</a>
+      <span class="logo">🎈 Birthday Drinks</span>
+      <a class="nav-link" href="#map">Get directions</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <span class="eyebrow">Coming soon</span>
-      <h1>Something new is<br />on its way.</h1>
+      <span class="eyebrow">You're invited</span>
+      <h1>Let's celebrate<br />my birthday! 🎂</h1>
       <p class="subhead">
-        This is a placeholder landing page — swap in your real product, pitch, and screenshots.
+        Nothing fancy — just drinks with friends, good music, and good vibes.
+        Come hang out on the rooftop and celebrate with me!
       </p>
-      <a class="cta-button" href="#features">Get started</a>
+      <a class="cta-button" href="#map">Get directions</a>
+    </section>
+
+    <section class="details">
+      <div class="detail-card">
+        <span class="detail-icon">📅</span>
+        <h3>When</h3>
+        <p>Wednesday, September 9 — tomorrow!</p>
+      </div>
+      <div class="detail-card">
+        <span class="detail-icon">🕖</span>
+        <h3>Time</h3>
+        <p>Drinks start at 7pm. Come whenever, stay as long as you like.</p>
+      </div>
+      <div class="detail-card">
+        <span class="detail-icon">📍</span>
+        <h3>Where</h3>
+        <p>
+          Klunkerkranich<br />
+          Karl-Marx-Straße 66<br />
+          12043 Berlin-Neukölln, Germany
+        </p>
+      </div>
+    </section>
+
+    <section id="map" class="map-section">
+      <h2 class="map-title">How to get there</h2>
+      <div class="map-frame">
+        <iframe
+          title="Map to Klunkerkranich, Karl-Marx-Straße 66, Berlin"
+          src="https://www.google.com/maps?q=Klunkerkranich,+Karl-Marx-Stra%C3%9Fe+66,+12043+Berlin,+Germany&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <a
+        class="cta-button"
+        href="https://www.google.com/maps?q=Klunkerkranich,+Karl-Marx-Stra%C3%9Fe+66,+12043+Berlin-Bezirk+Neuk%C3%B6lln,+Germany&ftid=0x47a84fbb3d0ff205:0xf9316656e0de7932&entry=gps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Open in Google Maps</a>
     </section>
 
     <section class="rainbow-section">
@@ -49,26 +91,12 @@
           <ellipse cx="585" cy="292" rx="35" ry="22" />
         </g>
       </svg>
-    </section>
-
-    <section id="features" class="features">
-      <div class="feature">
-        <h3>Fast</h3>
-        <p>Static HTML/CSS/JS — no build step, deploys straight to Vercel.</p>
-      </div>
-      <div class="feature">
-        <h3>Simple</h3>
-        <p>Clean, responsive single-page layout you can restyle in minutes.</p>
-      </div>
-      <div class="feature">
-        <h3>Yours to customize</h3>
-        <p>Replace this copy, the colors, and the sections with your own product.</p>
-      </div>
+      <p class="rainbow-subhead">Can't wait to see you all there 💜</p>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Demo Landing Page. Built with Claude Code.</p>
+    <p>&copy; 2026 Birthday Drinks. See you tomorrow!</p>
   </footer>
 </body>
 </html>
