@@ -3,11 +3,25 @@
   --bg-elevated: #131520;
   --text: #f4f5f7;
   --text-muted: #9a9db0;
-  --accent: #7c5cff;
-  --accent-hover: #9078ff;
   --border: #232538;
-  --success: #4ade80;
-  --error: #f87171;
+
+  /* Pride flag palette */
+  --red: #e40303;
+  --orange: #ff8c00;
+  --yellow: #ffed00;
+  --green: #008026;
+  --blue: #004dff;
+  --violet: #750787;
+
+  --rainbow: linear-gradient(
+    90deg,
+    var(--red),
+    var(--orange),
+    var(--yellow),
+    var(--green),
+    var(--blue),
+    var(--violet)
+  );
 }
 
 * {
@@ -24,10 +38,31 @@ body {
   overflow-x: hidden;
 }
 
+.pride-stripe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--rainbow);
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
 .bg-glow {
   position: fixed;
   inset: 0;
-  background: radial-gradient(600px circle at 50% -10%, rgba(124, 92, 255, 0.25), transparent 60%);
+  background:
+    radial-gradient(500px circle at 15% 0%, rgba(228, 3, 3, 0.18), transparent 55%),
+    radial-gradient(500px circle at 50% -5%, rgba(255, 237, 0, 0.16), transparent 55%),
+    radial-gradient(500px circle at 85% 0%, rgba(0, 77, 255, 0.2), transparent 55%),
+    radial-gradient(600px circle at 50% 100%, rgba(117, 7, 135, 0.15), transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -36,6 +71,7 @@ body {
   position: relative;
   z-index: 1;
   border-bottom: 1px solid var(--border);
+  margin-top: 6px;
 }
 
 .nav-inner {
@@ -50,6 +86,9 @@ body {
 .logo {
   font-weight: 700;
   letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-link {
@@ -64,7 +103,7 @@ body {
 
 .nav-link:hover {
   color: var(--text);
-  border-color: var(--accent);
+  border-color: var(--violet);
 }
 
 main {
@@ -82,12 +121,14 @@ main {
 .eyebrow {
   display: inline-block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent-hover);
-  background: rgba(124, 92, 255, 0.12);
-  padding: 6px 14px;
+  color: white;
+  background: var(--rainbow);
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+  padding: 6px 16px;
   border-radius: 999px;
   margin-bottom: 24px;
 }
@@ -97,6 +138,12 @@ h1 {
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin: 0 0 20px;
+  background: var(--rainbow);
+  background-size: 200% 100%;
+  animation: shimmer 8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .subhead {
@@ -111,16 +158,18 @@ h1 {
   display: inline-block;
   padding: 14px 28px;
   border-radius: 10px;
-  background: var(--accent);
+  background: var(--rainbow);
+  background-size: 200% 100%;
   color: white;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition: background-position 0.4s ease, transform 0.1s ease;
+  box-shadow: 0 8px 24px rgba(117, 7, 135, 0.35);
 }
 
 .cta-button:hover {
-  background: var(--accent-hover);
+  background-position: 100% 0%;
 }
 
 .cta-button:active {
@@ -137,11 +186,16 @@ h1 {
 }
 
 .feature {
-  padding: 28px;
+  padding: 26px 28px 28px;
   border: 1px solid var(--border);
+  border-top: 3px solid transparent;
   border-radius: 14px;
   background: var(--bg-elevated);
 }
+
+.feature:nth-child(1) { border-top-color: var(--red); }
+.feature:nth-child(2) { border-top-color: var(--yellow); }
+.feature:nth-child(3) { border-top-color: var(--blue); }
 
 .feature h3 {
   margin: 0 0 10px;
@@ -165,3 +219,10 @@ h1 {
   font-size: 13px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .pride-stripe,
+  .eyebrow,
+  h1 {
+    animation: none;
+  }
+}
